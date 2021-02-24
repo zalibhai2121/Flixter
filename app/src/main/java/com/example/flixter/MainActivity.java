@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         movies = new ArrayList<Movie>();
 //        create adapter
-        MovieAdapter movieAdapter = new MovieAdapter(this, movies);
+        final MovieAdapter movieAdapter = new MovieAdapter(this, movies);
 //        set the adapter on the recycler view
         rvMovies.setAdapter(movieAdapter);
 //        set a layout manager on the recycler view
@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.i(TAG, "Movies: " + movies.size());
                 } catch (JSONException e) {
                     Log.e(TAG, "Hit json exception", e);
-                    e.printStackTrace();
                 }
             }
 
